@@ -1,0 +1,14 @@
+<h2>Meeting Details</h2>
+<p>Titre : {{ meeting.title }}</p>
+<p>Date : {{ meeting.date }}</p>
+<p>Heure de début : {{ meeting.start_time }}</p>
+<p>Durée : {{ meeting.duration }} heures</p>
+<p>Salle : {{ meeting.room }}</p>
+<h1>Delete Meeting</h1>
+<p>Are you sure you want to delete the meeting titled "{{ meeting.title }}"?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+</form>
+<a href="{% url 'meetings_list_view' %}">Cancel</a>
